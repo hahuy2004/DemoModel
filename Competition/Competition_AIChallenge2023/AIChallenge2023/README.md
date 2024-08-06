@@ -24,15 +24,18 @@ Dataset structure:
    |   |   |   |   |-L01_extra
    |   |   |   |   |-....
 ```
-### Lưu ý: DO ĐÂY LÀ TEST NÊN TRONG CODE Ở TRÊN BỘ DỮ LIỆU KHÔNG ĐỦ THEO YÊU CẦU Ở DƯỚI, NẾU CHỈ TEST THÌ KHÔNG CẦN PHẢI TẢI Ở DƯỚI
+### Lưu ý: DO ĐÂY LÀ TEST NÊN TRONG CODE Ở TRÊN BỘ DỮ LIỆU KHÔNG ĐỦ THEO YÊU CẦU Ở DƯỚI, NẾU CHỈ TEST THÌ CHỈ CẦN TẢI PHẦN TEST LÀ ĐỦ
 
 ### Dict
-Download dict zip file: [dict](https://drive.google.com/file/d/1pjArVhbXljkpCLpFGg71rh2yzwXGeJWi/view?usp=sharing)
+- Download full dict zip file: [dict](https://drive.google.com/file/d/1pjArVhbXljkpCLpFGg71rh2yzwXGeJWi/view?usp=sharing)
 
 ### Vector embeddings
-Download bin file: 
+Download full bin file: 
    - [faiss_clip_cosine.bin](https://drive.google.com/file/d/1_3Z-iR5b3cT-QAfY6u1oUf9__YNju4m1/view?usp=sharing)
    - [faiss_clipv2_cosine.bin](https://drive.google.com/file/d/1CZDLrRlOK7jmvTc-p6jARR4BA6PSA61M/view?usp=sharing)
+
+### Tải thư mục Dict và bin file cho mục đích Test:
+   - [dict + bin for Test](https://drive.google.com/drive/folders/1hsaxCRpljnMcua28MKr-p-n27TFPS0He?usp=drive_link)
 
 ### Keyframes
 Download keyframes zip file and extract to folder frontend/ai/public/data.\
@@ -49,6 +52,9 @@ Data part 3:
    - [AIC_KeyframesB2_Extra_Reduced_0](https://www.kaggle.com/code/khitrnhxun/aic-keyframesb3-extra-reduced-notebook-0)
    - [AIC_KeyframesB2_Extra_Reduced_1](https://www.kaggle.com/code/khitrnhxun/aic-keyframesb3-extra-reduced-notebook-1)
    - [AIC_KeyframesB2_Extra_Reduced_2](https://www.kaggle.com/code/khitrnhxun/aic-keyframesb3-extra-reduced-notebook-2)
+
+Data for test: Chứa 5 video của L001 và 5 video của L002
+   - [AIC_Keyframe_ForTest](https://drive.google.com/drive/folders/1bfOq0HwP4LThJTWgu0ZhGCmKNt153F7M?usp=drive_link)
 
 ## Raw video from AIChallenge 2023
 Data part 1:
