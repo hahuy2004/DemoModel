@@ -80,6 +80,7 @@ pip install -r requirements.txt
 Sau đó di chuyển đến 2 file:
    - ...\anaconda3\Lib\site-packages\open_clip\factory.py (Với môi trường Anacoda)
    - ...\Python\Lib\site-packages\open_clip\factory.py (Với local)
+
 Ở hàm `load_state_dict()` của các file này sửa lại dòng:
    - checkpoint = torch.load(checkpoint_path, map_location=map_location)
    thành
