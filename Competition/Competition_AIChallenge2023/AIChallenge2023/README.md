@@ -1,3 +1,5 @@
+# Lưu ý: Đây chỉ là repositories clone lại từ github của anh trinhxuankhai cho mục đích thử nghiệm.
+
 # Multi-User Video Search: Bridging the Gap Between Text and Embedding Queries
 [Khai Trinh Xuan](https://github.com/trinhxuankhai), [Nguyen Nguyen Khoi](https://github.com/nguyen-brat), [Huy Luong-Quang](https://github.com/WMumei), [Sang Hoa-Xuan](https://github.com/HXSang), [Anh Nguyen-Luong-Nam](https://github.com/namanh2k2av), [Minh-Hung An](https://github.com/anminhhung)
 
@@ -22,6 +24,7 @@ Dataset structure:
    |   |   |   |   |-L01_extra
    |   |   |   |   |-....
 ```
+### Lưu ý: DO ĐÂY LÀ TEST NÊN TRONG CODE Ở TRÊN BỘ DỮ LIỆU KHÔNG ĐỦ THEO YÊU CẦU Ở DƯỚI, NẾU CHỈ TEST THÌ KHÔNG CẦN PHẢI TẢI Ở DƯỚI
 
 ### Dict
 Download dict zip file: [dict](https://drive.google.com/file/d/1pjArVhbXljkpCLpFGg71rh2yzwXGeJWi/view?usp=sharing)
@@ -64,13 +67,23 @@ Data part 3:
 Detailed on dataset extraction: [data](dataset_extraction/README.md)
 
 ## Installation
+- ### Tải Anacoda và chạy CMD của Anacoda
+
 - ### Backend
+Chạy các dòng sau để khởi tạo môi trường
 ```
 conda create -n AIChallenge2023
 conda activate AIChallenge2023
 pip install git+https://github.com/openai/CLIP.git
 pip install -r requirements.txt
 ```
+Sau đó di chuyển đến 2 file:
+   - ...\anaconda3\Lib\site-packages\open_clip\factory.py (Với môi trường Anacoda)
+   - ...\Python\Lib\site-packages\open_clip\factory.py (Với local)
+Ở hàm `load_state_dict()` của các file này sửa lại dòng:
+   - checkpoint = torch.load(checkpoint_path, map_location=map_location)
+   thành
+   - checkpoint = torch.load(checkpoint_path, map_location=map_location, weights_only=True)
 
 - ### Frontend
 Install nodejs: https://nodejs.org/en/download
@@ -83,34 +96,58 @@ npm install
 pip install flask
 pip install flask-cors
 pip install flask-socketio
-pip install pyngrok==4.1.1
+pip install pyngrok==4.1.1 (Cái này chưa rõ lắm)
 ngrok authtoken your_token # Add your ngrok authentication
 ```
 
 ## Usage
-It is recommended to configure the environment using Anaconda. Linux support only.
+Ở dưới đây là cấu hình cho Windows
 
 - ### Backend
-Using local machine, from root of repo:
+Từ local machine, chạy CMD của môi trường Anacoda được tạo cho AIChallenge2023:
 ```
-python3 app.py
+conda activate AIChallenge2023
+cd E:\AIO-2022 - Copy\Competition\Competition_AIChallenge2023\AIChallenge2023
+e:
+python app.py
 ```
 Using colaboratory, run appNotebook (App section) for starting the backend.
 
 - ### Frontend
-Change url in frontend/ai/src/helper/web_url.js. 
+Thay đổi URL trong frontend/ai/src/helper/web_url.js. thành: 
 ```
-cd frontend/ai/
+//BACKEND
+export const web_url = "http://localhost:8080";
+
+//SOCKET | DB SERVER
+export const socket_url =
+  "http://localhost:5000";
+
+//COMPETITION SUBMISSION SEVER
+export const server = "";
+
+//SESSION ID FOR COMPETITION SUBMISSION SEVER
+export const session = "";
+```
+Sau đó tiếp tục sử dụng CMD của môi trường Anacoda tạo cho AIChallenge2023
+```
+conda activate AIChallenge2023
+cd E:\AIO-2022 - Copy\Competition\Competition_AIChallenge2023\AIChallenge2023
+e:
 npm run dev
+```
+Nếu chưa chạy được npm run dev thì chạy dòng sau để cài Next.js (Cũng phải cài Node.js nữa):
+```
+npm install next react react-dom
 ```
 
 - ### DB Sever
-Open 2 terminal and run:
+Tiếp tục sử dụng CMD của môi trường Anacoda tạo cho AIChallenge2023:
 ```
+conda activate AIChallenge2023
+cd E:\AIO-2022 - Copy\Competition\Competition_AIChallenge2023\AIChallenge2023
+e:
 python appStorage.py
-```
-```
-ngrok http 5000
 ```
 
 - ### Interface
